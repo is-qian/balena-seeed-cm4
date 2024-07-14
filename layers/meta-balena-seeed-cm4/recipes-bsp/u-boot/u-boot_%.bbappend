@@ -30,7 +30,7 @@ SRC_URI += " \
 # and we can update to u-boot 2022 once the following topic
 # https://github.com/home-assistant/operating-system/pull/1761#issuecomment-1062992660
 # is clarified.
-SRC_URI:append:raspberrypicm4-ioboard = " \
+SRC_URI:append:raspberrypi4-64 = " \
     file://0011-enable-nvme-cm4.patch \
     file://0012-rpi-add-NVMe-to-boot-order.patch \
     file://0013-Revert-nvme-Correct-the-prps-per-page-calculation.patch \
@@ -52,7 +52,7 @@ BALENA_UBOOT_DEVICE_TYPES:append = " usb"
 
 # The CM4 Rpi firmware now supports booting from a NVME,
 # so we can add nvme to the list of balena boot devices
-BALENA_UBOOT_DEVICE_TYPES:append:raspberrypicm4-ioboard = " nvme"
+BALENA_UBOOT_DEVICE_TYPES:append:raspberrypi4-64 = " nvme"
 
 SRC_URI:append:raspberrypi4-64 = " \
     file://pi4-fix-crash-when-issuing-usb-reset.patch \

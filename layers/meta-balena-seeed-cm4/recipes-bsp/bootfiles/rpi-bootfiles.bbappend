@@ -45,3 +45,7 @@ do_deploy:append:fincm3() {
     # Install the dt-blob needed for camera support in Balena Fin CM3
     install -m 644 ${WORKDIR}/fincm3-dt-blob.bin ${DEPLOYDIR}/${BOOTFILES_DIR_NAME}/dt-blob.bin
 }
+
+do_deploy:append() {
+	wget https://datasheets.raspberrypi.org/cmio/dt-blob-disp1-cam2.bin -O ${DEPLOYDIR}/${BOOTFILES_DIR_NAME}/dt-blob.bin
+}
